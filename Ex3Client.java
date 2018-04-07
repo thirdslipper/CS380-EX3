@@ -9,7 +9,7 @@ import java.io.OutputStream;
 import java.net.Socket;
 public class Ex3Client {
 
-	public static void main(String[] args) throws IOException {
+	public static void main(String[] args) {
 		
 		try (Socket socket = new Socket("codebank.xyz", 38103)){
 			InputStream is = socket.getInputStream();
@@ -26,6 +26,8 @@ public class Ex3Client {
 			} else{
 				System.out.println("Response bad.");
 			}
+		} catch (IOException e){
+			System.out.println("Erorr! " + e.getMessage());
 		}
 	}
 	/**
